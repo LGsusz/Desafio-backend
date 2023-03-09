@@ -34,7 +34,7 @@ router.get('/cargarUsuarios', (req, res) => {
       res.status(500).send('Error al buscar usuarios')
     })
 })
-router.get('/buscarUsuario/:id', (req, res) => {
+router.get('/buscarUsuario/:id', authmiddleware, (req, res) => {
   db.Usuarios.findOne({
     where: { id: req.params.id }
   }).then(users => {
