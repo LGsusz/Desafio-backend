@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "admin",
     "database": "landscape",
-    "host": "127.0.0.1",
+    "host": "db",
     "dialect": "mariadb"
   },
   "test": {

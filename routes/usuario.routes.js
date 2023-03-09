@@ -5,6 +5,8 @@ const bcrypt = require('bcrypt')
 
 const router = Router()
 
+// console.log('el enviroment')
+// console.log(process.env)
 router.get('/cargarPermisos', (req, res) => {
   db.Permisos.findAll().then(users => {
     res.status(200).json(users)

@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable n/no-path-concat */
 
 const express = require('express')
 const app = express()
@@ -7,6 +9,8 @@ const bcrypt = require('bcrypt')
 const path = require('path')
 const jwt = require('jsonwebtoken')
 const cors = require('cors')
+require('dotenv').config()
+
 app.use(cors())
 
 const userRoutes = require('./routes/usuario.routes')
@@ -40,6 +44,7 @@ app.post('/login', async (req, res) => {
     })
   } else {
     res.send('email o contraseñas invalido')
+    return
   }
   if (usuario != undefined) {
     if (bcrypt.compareSync(pass, usuario.password) === true) {
